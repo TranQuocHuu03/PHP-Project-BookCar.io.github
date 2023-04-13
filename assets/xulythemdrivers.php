@@ -33,7 +33,7 @@ VALUES ('$idaccount','$name','$image_temp', '$description', '$driver_license',  
     if (mysqli_query($conn,$sql)) {
       if (move_uploaded_file($image['tmp_name'], '../pages/image/'.$image_temp)) {
         echo "Thêm tài xế thành công";
-        header("Location: ../pages/driver/drivers.php");
+        header("Location: ../pages/admin/customer.php");
       } else {
         echo "Lỗi: " . $sql . "<br>" . $conn->error;
       }

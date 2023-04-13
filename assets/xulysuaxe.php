@@ -7,7 +7,7 @@
     }
     
     $name = $_POST["name"];
-    $idvehicle_type = $_POST["id_type_vehicle"];
+    $idvehicle_type = $_POST["vehicle_type"];
     // $image = $_POST["image"];
     $capacity= $_POST["capacity"];
     $seat = $_POST["seat"];
@@ -25,7 +25,7 @@
         }
     }
     else{
-        $updatesql = "UPDATE vehicles SET name_vehicles='$name',id_type_vehicle='$idvehicle_type',  capacity='$capacity', seat='$seat', description='$description' WHERE id_vehicle=$id";
+        $updatesql = "UPDATE vehicles SET name_vehicles='$name',vehicle_type='$idvehicle_type',  capacity='$capacity', seat='$seat', description='$description' WHERE id_vehicle=$id";
         if(mysqLi_query($conn, $updatesql)){
             // echo "Thành công";
             header("Location:../pages/driver/Vehicles.php");

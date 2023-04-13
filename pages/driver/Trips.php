@@ -138,11 +138,11 @@
                             <th>point_of_departure</th>
                             <th>destination</th>
                             <th>trip_date</th>
-                            <th>status</th>
                             <th>price_book</th>
                             <th>price_ship</th>
                             <th>name driver</th>
                             <th>name vehicles</th>
+                            <th>status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -175,11 +175,11 @@
                                     <td><?php echo $row["point_of_departure"] ?></td>
                                     <td><?php echo $row["destination"] ?></td>
                                     <td><?php echo $row["trip_date"] ?></td>
-                                    <td><?php echo $row["status"] ?></td>
                                     <td><?php echo $row["price_book"] ?></td>
                                     <td><?php echo $row["price_ship"] ?></td>
                                     <td><?php echo $row["name_drivers"] ?></td>
                                     <td><?php echo $row["name_vehicles"] ?></td>
+                                    <td><?php echo $row["status"] ?></td>
                                     <td>
                                         <a onclick="return confirm('Bạn có muốn sửa xe này không?');" href="../driver/editTrips.php?edit=<?php echo $row['id_trips']; ?>">
                                             <button type="button" class="btn btn-primary"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">

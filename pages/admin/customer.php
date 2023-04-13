@@ -73,6 +73,7 @@
                 <table class='table' style='padding: 5px;'>
                     <thead>
                         <tr>
+                           
                             <th>Name</th>
                             <th>Username</th>
                             <th>Password</th>
@@ -97,11 +98,11 @@
                         }
 
                         // $sql = " SELECT name , address ,username , password, phone , role FROM drivers , users,account";
-                        $sql = "SELECT users.name, users.address, users.phone, accounts.username, accounts.password, accounts.role
+                        $sql = "SELECT users.name, users.address, users.phone ,accounts.id_account, accounts.username, accounts.password, accounts.role
     FROM users
     INNER JOIN accounts ON users.id_account = accounts.id_account
     UNION
-    SELECT drivers.name_drivers, drivers.address, drivers.phone, accounts.username, accounts.password, accounts.role
+    SELECT drivers.name_drivers, drivers.address, drivers.phone,accounts.id_account, accounts.username, accounts.password, accounts.role
     FROM drivers
     INNER JOIN accounts ON drivers.id_account = accounts.id_account;";
 
@@ -114,7 +115,7 @@
                                 while ($row = $result->fetch_assoc()) {
                         ?>
                                     <tr>
-
+                                     
                                         <td><?php echo $row["name"] ?></td>
                                         <td><?php echo $row["username"] ?></td>
                                         <td><?php echo $row["password"] ?></td>
@@ -122,7 +123,7 @@
                                         <td><?php echo $row["address"] ?></td>
                                         <td><?php echo $row["phone"] ?></td>
                                         <td>
-                                            <a href="../../assets/xulyxoacustomer.php">
+                                            <a href="../../assets/xulyxoacustomer.php? delete='<?php echo $row['id_account']?>'">
                                                 <button>Delete</button>
                                             </a>
                                         </td>
